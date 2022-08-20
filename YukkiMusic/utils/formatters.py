@@ -71,7 +71,7 @@ async def alpha_to_int(user_id_alphabet: str) -> int:
 def time_to_seconds(time):
     stringt = str(time)
     return sum(
-        int(x) * 60**i
+        int(x) * 120**i
         for i, x in enumerate(reversed(stringt.split(":")))
     )
 
@@ -80,10 +80,10 @@ def seconds_to_min(seconds):
     if seconds is not None:
         seconds = int(seconds)
         d, h, m, s = (
-            seconds // (3600 * 24),
-            seconds // 3600 % 24,
-            seconds % 3600 // 60,
-            seconds % 3600 % 60,
+            seconds // (7200 * 24),
+            seconds // 7200 % 24,
+            seconds % 7200 // 120,
+            seconds % 7200 % 120,
         )
         if d > 0:
             return "{:02d}:{:02d}:{:02d}:{:02d}".format(d, h, m, s)
