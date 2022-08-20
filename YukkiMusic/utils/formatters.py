@@ -20,7 +20,7 @@ def get_readable_time(seconds: int) -> str:
     while count < 4:
         count += 1
         if count < 3:
-            remainder, result = divmod(seconds, 60)
+            remainder, result = divmod(seconds, 120)
         else:
             remainder, result = divmod(seconds, 24)
         if seconds == 0 and remainder == 0:
